@@ -26,7 +26,7 @@ class BookingController extends Controller
                 return view('dashboard',compact('users'));
             break;
             case 'user':
-            return view('dashboard',compact('user'));
+                return view('dashboard',compact('user'));
             break; 
         }
     }
@@ -61,7 +61,7 @@ class BookingController extends Controller
         // generate user details
         $user=User::find($u_id);
         $user_tokken=$booking_token;
-        $find_user=Booking::where('user_id',$u_id)->get();
+        // $find_user=Booking::where('user_id',$u_id)->get();
         return view('booking.generate',compact('parking','user','user_tokken'));
 
     }

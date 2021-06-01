@@ -23,11 +23,12 @@
                 <th scope="col">Available Space</th>
                 <th scope="col">Available Time</th>
                 @if(Auth::user() && Auth::user()->role == 'administrator')
-                <th scope="col">Action</th>
+                  <th scope="col">Action</th>
                 @endif
+
                 @if(Auth::user() && Auth::user()->role == 'user')
-                <th scope="col">Booking</th>
-                <th>Cancel</th>
+                  <th scope="col">Booking</th>
+                  <th>Cancel</th>
                 @endif
               </tr>
             </thead>
@@ -39,9 +40,9 @@
                     <td>{{ $parking->location }}</td>
                     <td>{{ $parking->available_space }}</td>
                     <td>{{ $parking->available_time }}</td>
+
                     @if(Auth::user() && Auth::user()->role == 'administrator')
                     <td>
-                       
                         <a class="btn btn-warning" href="{{ route('parkings.edit',$parking->id) }}">Edit</a>
                     </td>
                     <td>
